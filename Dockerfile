@@ -8,5 +8,5 @@ COPY requirements.txt /app
 RUN pip install --no-cache-dir -r requirements.txt
 CMD ["python", "manage.py", "recreate_db"]
 CMD ["python", "manage.py", "setup_dev"]
-CMD ["honcho", "start", "-f", "Local"]
+CMD ["honcho", "start", "-f", "Procfile"]
 EXPOSE 5000
