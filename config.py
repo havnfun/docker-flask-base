@@ -50,7 +50,8 @@ class Config:
     EMAIL_SENDER = '{app_name} Admin <{email}>'.format(
         app_name=APP_NAME, email=MAIL_USERNAME)
 
-    REDIS_URL = os.getenv('REDISTOGO_URL', 'http://localhost:6379')
+    # docker config runs redis in a separate container
+    REDIS_URL = os.getenv('REDISTOGO_URL', 'http://redis:6379')
 
     RAYGUN_APIKEY = os.environ.get('RAYGUN_APIKEY')
 
